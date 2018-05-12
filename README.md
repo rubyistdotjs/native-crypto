@@ -2,9 +2,7 @@
 
 **A simple cryptocurrency tracker app with React Native.**
 
-<img  src="https://i.imgur.com/VIIuKgq.png" alt="Screenshot of the app running on the iPhone X (iOS 11)" title="iPhone X (iOS 11)" height="420" />
-
-<img  src="https://imgur.com/o28onzI.png" alt="Screenshot of the app running on the Samsung Galaxy S9 (Android 8)" title="Samsung Galaxy S9 (Android 8)" height="420" />
+<img  src="https://i.imgur.com/VIIuKgq.png" alt="Screenshot of the app running on the iPhone X (iOS 11)" title="iPhone X (iOS 11)" height="420" /> <img  src="https://imgur.com/o28onzI.png" alt="Screenshot of the app running on the Samsung Galaxy S9 (Android 8)" title="Samsung Galaxy S9 (Android 8)" height="420" />
 
 This is my very first app with React Native. I welcome criticisms (via issues)
 and code refactoring (via pull requests) but if you want to add a feature or
