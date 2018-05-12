@@ -2,9 +2,9 @@
 
 **A simple cryptocurrency tracker app with React Native.**
 
-<img  src="https://i.imgur.com/VIIuKgq.png" alt="Screenshot of the app running on the iPhone X (iOS 11)" title="iPhone X (iOS 11)" style="height: 420px;margin-right:16px;" />
+<img  src="https://i.imgur.com/VIIuKgq.png" alt="Screenshot of the app running on the iPhone X (iOS 11)" title="iPhone X (iOS 11)" height="420" />
 
-<img  src="https://imgur.com/o28onzI.png" alt="Screenshot of the app running on the Samsung Galaxy S9 (Android 8)" title="Samsung Galaxy S9 (Android 8)" style="height: 420px;margin-right:16px;" />
+<img  src="https://imgur.com/o28onzI.png" alt="Screenshot of the app running on the Samsung Galaxy S9 (Android 8)" title="Samsung Galaxy S9 (Android 8)" height="420" />
 
 This is my very first app with React Native. I welcome criticisms (via issues)
 and code refactoring (via pull requests) but if you want to add a feature or
@@ -21,7 +21,7 @@ You can preview the app on your Android or iOS devise through the Expo app
 or [App Store](https://itunes.apple.com/app/expo-client/id982107779)).
 Within the app scan the following QR code :
 
-<img src="https://imgur.com/P35LqFI.png" alt="A QRcode that can be scanned by the Expo app to launch NativeCrypto on your devise" title="Scan this QRcode with the Expo app on your devise" style="height: 220px;" />
+<img src="https://imgur.com/P35LqFI.png" alt="A QRcode that can be scanned by the Expo app to launch NativeCrypto on your devise" title="Scan this QRcode with the Expo app on your devise" height="220" />
 
 if this does not work checkout : [https://expo.io/@frozensire/native-crypto](https://expo.io/@frozensire/native-crypto)
 
