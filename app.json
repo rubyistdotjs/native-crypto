@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "NativeCrypto",
+    "slug": "native-crypto",
+    "description": "A simple cryptocurrency tracker app.",
+    "version": "1.0.0-beta.1",
+    "primaryColor": "#2f365f",
+    "splash": {
+      "backgroundColor": "#2f365f"
+    },
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#191e38"
+    },
+    "privacy": "unlisted",
+    "sdkVersion": "27.0.0"
+  }
+}
