@@ -1,6 +1,7 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { mergeWith, omit, transform, camelCase, flatMap, orderBy } from 'lodash';
+import { orderBy } from 'lodash';
+import api from '../api/cryptocurrencies';
 
 import CryptocurrencyListItem from './CryptocurrencyListItem';
 
@@ -26,20 +27,10 @@ export default class CryptocurrencyList extends React.PureComponent {
   }
 
   fetchCryptocurrencies() {
-    fetch('https://api.coinmarketcap.com/v2/ticker/?convert=EUR&limit=50')
-      .then(res => res.json())
-      .then((res) => {
-        const cryptocurrencies = flatMap(res.data).map((crypto) => {
-          const object = omit(crypto, 'quotes');
-          const quote = crypto.quotes.EUR;
-
-          return transform(mergeWith(object, quote), (obj, val, key) => {
-            obj[camelCase(key)] = val;
-          }, {});
-        });
-
+    api.list({ currency: 'EUR', limit: 50 })
+      .then((data) => {
         this.setState({
-          cryptocurrencies: orderBy(cryptocurrencies, 'rank'),
+          cryptocurrencies: orderBy(data, 'rank'),
           loading: false,
         });
       })
