@@ -3,7 +3,7 @@
   "description": "A simple cryptocurrency tracker app with React Native.",
   "version": "1.0.0-beta.1",
   "author": "Romain GUILLOTEAU (https://www.romainguilloteau.com/)",
-  "repository": "github:ColdEris/native-crypto",
+  "repository": "github:rubyistdotjs/native-crypto",
   "license": "MIT",
   "private": true,
   "devDependencies": {

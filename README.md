@@ -26,7 +26,7 @@ if this does not work checkout : [https://expo.io/@frozensire/native-crypto](htt
 ## Installation
 
 ```sh
-git clone git@github.com:colderis/native-crypto.git NativeCrypto
+git clone git@github.com:rubyistdotjs/native-crypto.git NativeCrypto
 cd NativeCrypto
 yarn install # or npm install
 yarn start # or npm start
