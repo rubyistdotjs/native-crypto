@@ -35,14 +35,11 @@ yarn start # or npm start
 ## Resources
 
 * [CoinMarketCap API](https://coinmarketcap.com/api/)
-* [create-react-native-app](https://github.com/react-community/create-react-native-app)
 * [cryptocurrency-icons](https://github.com/cjdowner/cryptocurrency-icons)
 * [React documentation](https://reactjs.org/docs)
 * [React Native documentation](https://facebook.github.io/react-native/docs/getting-started.html)
 * [React Navigation documentation](https://reactnavigation.org/docs/en/getting-started.html)
 * [Expo documentation](https://docs.expo.io/)
-* [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript/blob/master/README.md)
-* [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
 
 ## License
 
