@@ -3,12 +3,7 @@ import PropTypes from 'prop-types';
 import { Text } from 'react-native';
 import { formatMoney } from 'accounting';
 
-export default function Currency({
-  amount,
-  precision,
-  symbol,
-  style,
-}) {
+export default function Currency({ amount, precision, symbol, style }) {
   if (amount === null) return null;
 
   const amountFormatted = formatMoney(amount, {

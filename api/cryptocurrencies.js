@@ -21,7 +21,9 @@ export default {
   },
 
   get: async ({ id, currency = 'EUR' }) => {
-    const url = URI(endpoint).segment(id).query({ convert: currency });
+    const url = URI(endpoint)
+      .segment(id)
+      .query({ convert: currency });
     const res = await fetch(url.toString());
     const json = await res.json();
     return transformCryptocurrencies(json.data, currency.toUpperCase());

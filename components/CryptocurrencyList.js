@@ -27,14 +27,15 @@ export default class CryptocurrencyList extends React.PureComponent {
   }
 
   fetchCryptocurrencies() {
-    api.list({ currency: 'EUR', limit: 50 })
-      .then((data) => {
+    api
+      .list({ currency: 'EUR', limit: 50 })
+      .then(data => {
         this.setState({
           cryptocurrencies: orderBy(data, 'rank'),
           loading: false,
         });
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   }
@@ -43,7 +44,9 @@ export default class CryptocurrencyList extends React.PureComponent {
     return (
       <FlatList
         data={this.state.cryptocurrencies}
-        renderItem={({ item }) => <CryptocurrencyListItem cryptocurrency={item} />}
+        renderItem={({ item }) => (
+          <CryptocurrencyListItem cryptocurrency={item} />
+        )}
         keyExtractor={item => item.id.toString()}
         refreshing={this.state.loading}
         onRefresh={this.handleRefresh}

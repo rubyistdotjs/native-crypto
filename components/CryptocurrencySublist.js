@@ -37,7 +37,7 @@ export default function CryptocurrencySublist({ cryptocurrency }) {
           style={styles.text}
         />
       </CryptocurrencySublistItem>
-      {maxSupply &&
+      {maxSupply && (
         <CryptocurrencySublistItem label="Maximum">
           <Currency
             amount={maxSupply}
@@ -46,7 +46,7 @@ export default function CryptocurrencySublist({ cryptocurrency }) {
             style={styles.text}
           />
         </CryptocurrencySublistItem>
-      }
+      )}
     </View>
   );
 }

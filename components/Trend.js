@@ -30,9 +30,7 @@ export default function Trend({ percent, fontSize, iconSize }) {
   return (
     <View style={styles.container}>
       <MaterialIcons name={icon} size={iconSize} color={color} />
-      <Text style={[styles.text, { color, fontSize }]}>
-        {percentString}
-      </Text>
+      <Text style={[styles.text, { color, fontSize }]}>{percentString}</Text>
     </View>
   );
 }

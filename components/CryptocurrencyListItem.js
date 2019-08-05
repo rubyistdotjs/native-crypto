@@ -42,30 +42,25 @@ export default class CryptocurrencyListItem extends React.PureComponent {
           <View style={styles.container}>
             <View style={styles.heading}>
               <View style={styles.row}>
-                <Text style={styles.symbol}>
-                  {symbol}
-                </Text>
-                <Text style={styles.name}>
-                  {name}
-                </Text>
+                <Text style={styles.symbol}>{symbol}</Text>
+                <Text style={styles.name}>{name}</Text>
               </View>
               <View style={styles.row}>
                 <Currency style={styles.price} amount={price} symbol="€" />
                 {!this.state.expand && <Trend percent={percentChange24H} />}
               </View>
             </View>
-            <Text style={styles.rank}>
-              {rank}
-            </Text>
+            <Text style={styles.rank}>{rank}</Text>
           </View>
 
-          {this.state.expand &&
+          {this.state.expand && (
             <View style={[styles.container, styles.sublist]}>
-              <CryptocurrencySublist cryptocurrency={this.props.cryptocurrency} />
+              <CryptocurrencySublist
+                cryptocurrency={this.props.cryptocurrency}
+              />
             </View>
-          }
+          )}
         </View>
-
       </TouchableOpacity>
     );
   }
