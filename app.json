@@ -3,8 +3,16 @@
     "name": "NativeCrypto",
     "slug": "native-crypto",
     "description": "A simple cryptocurrency tracker app.",
+    "privacy": "public",
     "version": "1.0.0-beta.1",
+    "sdkVersion": "34.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "orientation": "portrait",
     "primaryColor": "#2f365f",
+    "icon": "./assets/images/icon.png",
     "splash": {
       "backgroundColor": "#2f365f"
     },
@@ -12,7 +20,14 @@
       "barStyle": "light-content",
       "backgroundColor": "#191e38"
     },
-    "privacy": "unlisted",
-    "sdkVersion": "27.0.0"
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    }
   }
 }
