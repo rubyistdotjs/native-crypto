@@ -9,7 +9,7 @@ const AppNavigator = createStackNavigator(
   },
   {
     initialRouteName: 'Cryptocurrencies',
-    navigationOptions: {
+    defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: header.backgroundColor,
       },
