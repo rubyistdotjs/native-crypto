@@ -7,7 +7,7 @@ import CryptocurrencySublistItem from './CryptocurrencySublistItem';
 import Trend from './Trend';
 import Currency from './Currency';
 
-export default function CryptocurrencySublist({ cryptocurrency }) {
+function CryptocurrencySublist({ cryptocurrency }) {
   const {
     symbol,
     circulatingSupply,
@@ -74,3 +74,5 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
 });
+
+export default CryptocurrencySublist;

@@ -1,56 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FlatList } from 'react-native';
 import { orderBy } from 'lodash';
 import api from '../api/cryptocurrencies';
 
 import CryptocurrencyListItem from './CryptocurrencyListItem';
 
-export default class CryptocurrencyList extends React.PureComponent {
-  constructor(props) {
-    super(props);
+function CryptocurrencyList() {
+  const [cryptocurrencies, setCryptocurrencies] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    this.state = {
-      cryptocurrencies: [],
-      loading: true,
-    };
+  const fetchCryptocurrencies = () => {
+    setLoading(true);
 
-    this.handleRefresh = this.handleRefresh.bind(this);
-  }
-
-  componentDidMount() {
-    this.fetchCryptocurrencies();
-  }
-
-  handleRefresh() {
-    this.setState({ loading: true });
-    this.fetchCryptocurrencies();
-  }
-
-  fetchCryptocurrencies() {
     api
       .list({ currency: 'EUR', limit: 50 })
-      .then(data => {
-        this.setState({
-          cryptocurrencies: orderBy(data, 'rank'),
-          loading: false,
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
+      .then(data => setCryptocurrencies(orderBy(data, 'rank')))
+      .catch(error => console.log(error))
+      .finally(() => setLoading(false));
+  };
 
-  render() {
-    return (
-      <FlatList
-        data={this.state.cryptocurrencies}
-        renderItem={({ item }) => (
-          <CryptocurrencyListItem cryptocurrency={item} />
-        )}
-        keyExtractor={item => item.id.toString()}
-        refreshing={this.state.loading}
-        onRefresh={this.handleRefresh}
-      />
-    );
-  }
+  useEffect(() => {
+    fetchCryptocurrencies();
+  }, []);
+
+  return (
+    <FlatList
+      data={cryptocurrencies}
+      renderItem={({ item }) => (
+        <CryptocurrencyListItem cryptocurrency={item} />
+      )}
+      keyExtractor={item => item.id.toString()}
+      refreshing={loading}
+      onRefresh={fetchCryptocurrencies}
+    />
+  );
 }
+
+export default CryptocurrencyList;

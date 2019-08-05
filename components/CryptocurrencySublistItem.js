@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Text, View, StyleSheet } from 'react-native';
 import { colors, fontSizes } from '../styles/variables';
 
-export default function SublistItem({ label, children }) {
+function SublistItem({ label, children }) {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label} :</Text>
@@ -34,3 +34,5 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
 });
+
+export default SublistItem;

@@ -5,7 +5,7 @@ import { colors, borderRadius } from '../styles/variables';
 
 import logos from '../database/cryptocurrencies-logos.json';
 
-export default function CryptocurrencyLogo({ symbol, size }) {
+function CryptocurrencyLogo({ symbol, size }) {
   const logo = logos[symbol.toLowerCase()];
 
   if (logo) {
@@ -32,3 +32,5 @@ const styles = StyleSheet.create({
     borderRadius: borderRadius.full,
   },
 });
+
+export default CryptocurrencyLogo;

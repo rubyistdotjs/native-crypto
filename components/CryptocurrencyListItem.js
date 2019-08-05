@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { textColors, fontSizes, borderColors } from '../styles/variables';
@@ -8,62 +8,46 @@ import CryptocurrencySublist from './CryptocurrencySublist';
 import Trend from './Trend';
 import Currency from './Currency';
 
-export default class CryptocurrencyListItem extends React.PureComponent {
-  constructor(props) {
-    super(props);
+function CryptocurrencyListItem({ cryptocurrency }) {
+  const [expand, setExpand] = useState(false);
 
-    this.state = {
-      expand: false,
-    };
+  const handleTouch = () => {
+    setExpand(!expand);
+  };
 
-    this.handleTouch = this.handleTouch.bind(this);
-  }
+  return (
+    <TouchableOpacity style={styles.container} onPress={handleTouch}>
+      <View style={styles.logo}>
+        <CryptocurrencyLogo symbol={cryptocurrency.symbol} />
+      </View>
 
-  handleTouch() {
-    this.setState(prevState => ({ expand: !prevState.expand }));
-  }
-
-  render() {
-    const {
-      name,
-      symbol,
-      rank,
-      price,
-      percentChange24H,
-    } = this.props.cryptocurrency;
-
-    return (
-      <TouchableOpacity style={styles.container} onPress={this.handleTouch}>
-        <View style={styles.logo}>
-          <CryptocurrencyLogo symbol={symbol} />
-        </View>
-
-        <View style={styles.content}>
-          <View style={styles.container}>
-            <View style={styles.heading}>
-              <View style={styles.row}>
-                <Text style={styles.symbol}>{symbol}</Text>
-                <Text style={styles.name}>{name}</Text>
-              </View>
-              <View style={styles.row}>
-                <Currency style={styles.price} amount={price} symbol="€" />
-                {!this.state.expand && <Trend percent={percentChange24H} />}
-              </View>
+      <View style={styles.content}>
+        <View style={styles.container}>
+          <View style={styles.heading}>
+            <View style={styles.row}>
+              <Text style={styles.symbol}>{cryptocurrency.symbol}</Text>
+              <Text style={styles.name}>{cryptocurrency.name}</Text>
             </View>
-            <Text style={styles.rank}>{rank}</Text>
-          </View>
-
-          {this.state.expand && (
-            <View style={[styles.container, styles.sublist]}>
-              <CryptocurrencySublist
-                cryptocurrency={this.props.cryptocurrency}
+            <View style={styles.row}>
+              <Currency
+                style={styles.price}
+                amount={cryptocurrency.price}
+                symbol="€"
               />
+              {!expand && <Trend percent={cryptocurrency.percentChange24H} />}
             </View>
-          )}
+          </View>
+          <Text style={styles.rank}>{cryptocurrency.rank}</Text>
         </View>
-      </TouchableOpacity>
-    );
-  }
+
+        {expand && (
+          <View style={[styles.container, styles.sublist]}>
+            <CryptocurrencySublist cryptocurrency={cryptocurrency} />
+          </View>
+        )}
+      </View>
+    </TouchableOpacity>
+  );
 }
 
 CryptocurrencyListItem.propTypes = {
@@ -132,3 +116,5 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
 });
+
+export default CryptocurrencyListItem;

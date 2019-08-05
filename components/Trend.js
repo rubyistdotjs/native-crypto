@@ -5,7 +5,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { formatMoney } from 'accounting';
 import { colors } from '../styles/variables';
 
-export default function Trend({ percent, fontSize, iconSize }) {
+function Trend({ percent, fontSize, iconSize }) {
   if (percent === null) return null;
 
   const percentRounded = parseFloat(percent).toFixed(2);
@@ -58,3 +58,5 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
 });
+
+export default Trend;
