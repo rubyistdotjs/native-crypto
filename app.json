@@ -12,7 +12,6 @@
     ],
     "orientation": "portrait",
     "primaryColor": "#2f365f",
-    "icon": "./assets/images/icon.png",
     "splash": {
       "backgroundColor": "#2f365f"
     },
